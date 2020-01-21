@@ -1,0 +1,28 @@
+{
+  "name": "Stealthily Read",
+  "description": "Stealthily doing something and quickly hide",
+  "version": "1.0",
+  "manifest_version": 2,
+  "icons": {
+    "16": "img/ico.png",
+    "32": "img/ico.png",
+    "48": "img/ico.png",
+    "128": "img/ico.png"
+  },
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_icon": "img/ico.png"
+  },
+  "background": {
+    "page": "background/index.html",
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js-libs/jquery.js", "js/content-script.js"],
+      "css": ["css/custom.css"],
+      "run_at": "document_start"
+    }
+  ]
+}

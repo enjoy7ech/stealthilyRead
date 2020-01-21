@@ -1,0 +1,141 @@
+<html>
+  <head>
+    <style>
+      body {
+        color: #000;
+      }
+      h1 {
+        margin: 0 !important;
+      }
+      .popup-content {
+        width: 300px;
+        background: #e7e7e7;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      .popup-title {
+        color: #400040;
+      }
+      .inject-url {
+        font-size: 16px;
+        color: #000;
+        width: 100px;
+        display: inline-block;
+      }
+      .size-inputer {
+        width: 50px;
+      }
+      .submit-g {
+        margin-top: 30px;
+        text-align: right;
+      }
+      .submit-g-btn {
+        cursor: pointer;
+        background: #3881a7;
+        border-radius: 4px;
+        color: #fff;
+        padding: 5px 8px;
+      }
+      .must-input {
+        vertical-align: middle;
+        color: #ea2424;
+        font-size: 20px;
+      }
+      .link-board {
+        margin-top: 20px;
+        background: #f9f8df;
+        border-top: 1px solid #070436;
+        border-left: 1px solid #070436;
+        border-right: 1px solid #070436;
+      }
+      .link-board-box {
+        height: 200px;
+        overflow-y: scroll;
+        border-top: 1px solid #070436;
+      }
+      .link-item {
+        border-bottom: 1px solid #070436;
+        padding: 10px;
+        position: relative;
+      }
+      .link-item-name {
+        font-weight: bold;
+        font-size: 14px;
+        width: 60px;
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .link-item-name::after {
+        content: "";
+        height: 100%;
+        border-right: 1px solid #070436;
+        position: absolute;
+        top: 0;
+        left: 71px;
+      }
+      .link-item-url {
+        font-size: 14px;
+        margin-left: 10px;
+        width: 175px;
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .link-item-del {
+        float: right;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      ::-webkit-scrollbar {
+        width: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="popup-content">
+      <h1 class="popup-title">Stealthily Read</h1>
+      <div style="margin-top: 20px;">
+        <span class="inject-url">Name:</span>
+        <input type="text" id="injectName" />
+      </div>
+      <div style="margin-top: 20px;">
+        <span class="inject-url">Inject URL:</span>
+        <input list="injectUrl" type="text" id="url" />
+        <datalist id="injectUrl"> </datalist>
+
+        <span class="must-input">*</span>
+      </div>
+      <div style="margin-top: 20px;">
+        <span class="inject-url">Size (px):</span>
+        <input
+          type="text"
+          class="size-inputer"
+          id="width"
+          placeholder="width"
+        />
+        <span style="color: #000;margin: 0 10px;">x</span>
+        <input
+          type="text"
+          class="size-inputer"
+          id="height"
+          placeholder="height"
+        />
+      </div>
+      <div class="submit-g">
+        <span class="submit-g-btn" id="saveLink">Save link </span>
+        <span class="submit-g-btn" style="margin-left: 20px;" id="injectFrame"
+          >Lets Start
+        </span>
+      </div>
+      <div class="link-board">
+        <h1 style="padding: 10px;">Saved Links</h1>
+        <div id="link-board-box" class="link-board-box"></div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="./js-libs/jquery.js"></script>
+  <script type="text/javascript" src="./index.js"></script>
+</html>
